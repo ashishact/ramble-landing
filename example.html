@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramble | Powered by Mother Tongue</title>
+    <style>
+        :root {
+            --bg-color: #F2F0EB; /* Warm clay/paper tone */
+            --text-color: #0F0F0F; /* Stark black */
+            --accent-color: #2A2A2A;
+            --dot-color: #0F0F0F;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            /* Subtle grain texture for that "warm tech" feel */
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        /* The Container */
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* The Dot Matrix Visual (Abstract Face/Voice) */
+        .visual-matrix {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 8px;
+            width: 200px;
+            height: 240px;
+            margin: 0 auto 3rem auto;
+            mask-image: radial-gradient(circle, black 40%, transparent 70%);
+            -webkit-mask-image: radial-gradient(circle, black 40%, transparent 70%);
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--dot-color);
+            border-radius: 50%;
+            animation: breathe 4s infinite ease-in-out;
+            opacity: 0.2;
+        }
+
+        /* Creating the "Face/Shape" density via random delays and opacity */
+        .dot:nth-child(2n) { opacity: 0.8; animation-delay: 0.2s; }
+        .dot:nth-child(3n) { opacity: 0.5; animation-delay: 0.5s; }
+        .dot:nth-child(5n) { opacity: 1; animation-delay: 1s; transform: scale(1.2); }
+        .dot:nth-child(7n) { opacity: 0; } /* Negative space */
+
+        @keyframes breathe {
+            0%, 100% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.2); opacity: 0.8; }
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 4rem;
+            font-weight: 500;
+            letter-spacing: -0.04em;
+            margin: 0;
+            line-height: 1;
+        }
+
+        .powered-by {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 1rem;
+            margin-bottom: 3rem;
+            opacity: 0.6;
+        }
+
+        .powered-by span {
+            font-weight: bold;
+        }
+
+        /* The Download Button */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--text-color);
+            color: var(--bg-color);
+            text-decoration: none;
+            padding: 18px 42px;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        .meta {
+            margin-top: 1.5rem;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .meta-tag {
+            display: inline-block;
+            background: rgba(0,0,0,0.05);
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin: 0 4px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="visual-matrix" id="matrix">
+            </div>
+
+        <h1>Ramble</h1>
+        <div class="powered-by">Powered by <span>Mother Tongue</span></div>
+
+        <a href="#" class="download-btn">
+            Download for macOS
+        </a>
+
+        <div class="meta">
+            <span class="meta-tag">v0.9.2 (Beta)</span>
+            <span class="meta-tag">Apple Silicon Native</span>
+        </div>
+    </div>
+
+    <script>
+        // Simple script to generate the dot grid
+        const matrix = document.getElementById('matrix');
+        for(let i = 0; i < 144; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'dot';
+            matrix.appendChild(dot);
+        }
+    </script>
+</body>
+</html>
