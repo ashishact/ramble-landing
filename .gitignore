@@ -20,6 +20,9 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# Figma working files
+src/assets/figma/
+
 # jetbrains setting folder
 .idea/
 

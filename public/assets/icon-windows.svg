@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" height="100%" overflow="visible" preserveAspectRatio="xMidYMid meet" style="display: block;" viewBox="0 0 22 22" width="100%">
+<g id="Clip path group">
+<mask height="22" id="mask0_0_6388" maskUnits="userSpaceOnUse" style="mask-type:luminance" width="22" x="0" y="0">
+<g id="a">
+<path d="M22 0H0V22H22V0Z" fill="var(--fill-0, white)" id="Vector"/>
+</g>
+</mask>
+<g mask="url(#mask0_0_6388)">
+<g id="Group">
+<path d="M0.458333 0H10.0833C10.0833 0 10.5417 0 10.5417 0.458333V10.0833C10.5417 10.0833 10.5417 10.5417 10.0833 10.5417H0.458333C0.458333 10.5417 0 10.5417 0 10.0833V0.458333C0 0.458333 0 0 0.458333 0Z" fill="var(--fill-0, white)" id="Vector_2"/>
+<path d="M0.458333 11.4583H10.0833C10.0833 11.4583 10.5417 11.4583 10.5417 11.9167V21.5417C10.5417 21.5417 10.5417 22 10.0833 22H0.458333C0.458333 22 0 22 0 21.5417V11.9167C0 11.9167 0 11.4583 0.458333 11.4583Z" fill="var(--fill-0, white)" id="Vector_3"/>
+<path d="M11.9167 11.4583H21.5417C21.5417 11.4583 22 11.4583 22 11.9167V21.5417C22 21.5417 22 22 21.5417 22H11.9167C11.9167 22 11.4583 22 11.4583 21.5417V11.9167C11.4583 11.9167 11.4583 11.4583 11.9167 11.4583Z" fill="var(--fill-0, white)" id="Vector_4"/>
+<path d="M11.9167 0H21.5417C21.5417 0 22 0 22 0.458333V10.0833C22 10.0833 22 10.5417 21.5417 10.5417H11.9167C11.9167 10.5417 11.4583 10.5417 11.4583 10.0833V0.458333C11.4583 0.458333 11.4583 0 11.9167 0Z" fill="var(--fill-0, white)" id="Vector_5"/>
+</g>
+</g>
+</g>
+</svg>

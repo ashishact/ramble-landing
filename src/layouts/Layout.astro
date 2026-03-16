@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  title = "Ramble - Voice to text for Mac",
-  description = "Press a key, speak, and watch your words appear. Fast, private voice transcription that works anywhere on your Mac."
+  title = "Ramble — Hands-free productivity",
+  description = "Just speak your mind and let Ramble handle the busywork, saving you hours to actually enjoy your day."
 } = Astro.props;
 ---
 
@@ -17,24 +17,21 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
 
-    <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   </head>
-  <body class="font-sans antialiased">
+  <body class="font-body antialiased text-dark bg-white">
     <slot />
   </body>
 </html>

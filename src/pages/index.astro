@@ -1,262 +1,234 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+
+const downloadUrl = "https://ramble-cdn.brokenatom.io/macos/releases/Ramble-1.16.0.dmg";
 ---
 
 <Layout>
-  <main>
-    <!-- Hero Section - Minimal Design -->
-    <section class="hero-section">
-      <div class="hero-container">
-        <!-- Dot Matrix Visual -->
-        <div class="visual-matrix">
-          {Array.from({ length: 144 }).map(() => (
-            <div class="dot"></div>
-          ))}
-        </div>
+  <Nav />
 
-        <h1 class="hero-title">Ramble</h1>
-        <p class="hero-tagline">Type with your voice</p>
+  <!-- Hero -->
+  <section class="pt-32 pb-0 px-6 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="font-heading text-5xl md:text-[70px] leading-[1.05] tracking-[-3px]">
+        Hands-free productivity.
+      </h1>
+      <p class="text-lg md:text-xl text-muted mt-6 max-w-xl mx-auto leading-relaxed">
+        Just speak your mind and let Ramble handle the busywork,
+        saving you hours to actually enjoy your day.
+      </p>
 
-        <a href="https://ramble-cdn.brokenatom.io/macos/releases/Ramble-1.9.1.dmg" class="download-btn">
-          Download for macOS
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
+        <a href={downloadUrl} class="flex items-center gap-3 bg-dark text-white px-7 py-4 rounded-2xl font-medium hover:-translate-y-0.5 transition-all shadow-lg">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M12.15 6.9c-.95 0-2.41-1.08-3.96-1.04-2.04.03-3.91 1.18-4.96 3.01-2.12 3.68-.55 9.1 1.52 12.09 1.01 1.45 2.21 3.09 3.79 3.04 1.52-.07 2.09-.99 3.94-.99 1.83 0 2.35.99 3.96.95 1.64-.03 2.67-1.48 3.67-2.95 1.16-1.69 1.64-3.33 1.66-3.42-.04-.01-3.18-1.22-3.22-4.86-.04-3.04 2.47-4.49 2.59-4.56-1.43-2.09-3.62-2.32-4.39-2.38-2-.16-3.67 1.09-4.6 1.09zM15.53 3.83c.84-1.01 1.4-2.43 1.25-3.83-1.21.05-2.66.8-3.53 1.82-.78.9-1.46 2.34-1.28 3.71 1.34.1 2.72-.7 3.56-1.7" fill="white"/></svg>
+          Download for Mac
         </a>
-
-        <div class="meta">
-          <span class="meta-tag">v1.9.1</span>
-          <span class="meta-tag">Apple Silicon</span>
-          <span class="meta-tag">Free</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- Value Props -->
-    <section class="py-24 px-6 bg-white">
-      <div class="max-w-5xl mx-auto">
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="p-8 bg-[#F2F0EB]/50 rounded-2xl border border-stone-200/50">
-            <div class="w-12 h-12 flex items-center justify-center bg-stone-900 rounded-xl mb-5">
-              <svg class="w-6 h-6 text-[#F2F0EB]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-stone-900">Private</h3>
-            <p class="text-stone-500 leading-relaxed">
-              Your voice never leaves your Mac. All transcription happens locally using Whisper AI.
-            </p>
-          </div>
-
-          <div class="p-8 bg-[#F2F0EB]/50 rounded-2xl border border-stone-200/50">
-            <div class="w-12 h-12 flex items-center justify-center bg-stone-900 rounded-xl mb-5">
-              <svg class="w-6 h-6 text-[#F2F0EB]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-stone-900">Fast</h3>
-            <p class="text-stone-500 leading-relaxed">
-              Optimized for Apple Silicon. Your words appear instantly when you stop speaking.
-            </p>
-          </div>
-
-          <div class="p-8 bg-[#F2F0EB]/50 rounded-2xl border border-stone-200/50">
-            <div class="w-12 h-12 flex items-center justify-center bg-stone-900 rounded-xl mb-5">
-              <svg class="w-6 h-6 text-[#F2F0EB]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M8 12l2 2 4-4"/>
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold mb-3 text-stone-900">Simple</h3>
-            <p class="text-stone-500 leading-relaxed">
-              Tap right ⌘, speak, done. Text appears right where you're typing.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How it works -->
-    <section class="py-24 px-6 bg-[#F2F0EB]">
-      <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl md:text-5xl font-medium mb-16 text-stone-900 tracking-tight">How it works</h2>
-        <div class="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-4">
-          <div class="flex flex-col items-center gap-4 p-8 bg-white rounded-2xl border border-stone-200/50 shadow-sm w-full md:w-auto md:min-w-[200px]">
-            <div class="w-10 h-10 flex items-center justify-center bg-stone-900 rounded-full font-medium text-[#F2F0EB]">1</div>
-            <div>
-              <h4 class="font-semibold mb-1 text-stone-900">Tap right ⌘</h4>
-              <p class="text-sm text-stone-400">From any app</p>
-            </div>
-          </div>
-
-          <div class="text-2xl text-stone-300 rotate-90 md:rotate-0">→</div>
-
-          <div class="flex flex-col items-center gap-4 p-8 bg-white rounded-2xl border border-stone-200/50 shadow-sm w-full md:w-auto md:min-w-[200px]">
-            <div class="w-10 h-10 flex items-center justify-center bg-stone-900 rounded-full font-medium text-[#F2F0EB]">2</div>
-            <div>
-              <h4 class="font-semibold mb-1 text-stone-900">Speak naturally</h4>
-              <p class="text-sm text-stone-400">At your normal pace</p>
-            </div>
-          </div>
-
-          <div class="text-2xl text-stone-300 rotate-90 md:rotate-0">→</div>
-
-          <div class="flex flex-col items-center gap-4 p-8 bg-white rounded-2xl border border-stone-200/50 shadow-sm w-full md:w-auto md:min-w-[200px]">
-            <div class="w-10 h-10 flex items-center justify-center bg-stone-900 rounded-full font-medium text-[#F2F0EB]">3</div>
-            <div>
-              <h4 class="font-semibold mb-1 text-stone-900">Text appears</h4>
-              <p class="text-sm text-stone-400">Instantly, where you need it</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Download CTA -->
-    <section id="download" class="py-32 px-6 bg-white">
-      <div class="max-w-2xl mx-auto text-center">
-        <h2 class="text-4xl md:text-5xl font-medium mb-4 text-stone-900 tracking-tight">Ready to ramble?</h2>
-        <p class="text-xl text-stone-500 mb-10">Start typing with your voice today.</p>
-        <a href="https://ramble-cdn.brokenatom.io/macos/releases/Ramble-1.9.1.dmg" class="inline-flex items-center justify-center bg-stone-900 text-[#F2F0EB] px-10 py-5 rounded-xl font-medium text-lg hover:-translate-y-0.5 transition-all shadow-lg hover:shadow-xl">
-          Download for macOS
+        <a href="#" class="flex items-center gap-3 border border-dark/20 text-dark px-7 py-4 rounded-2xl font-medium hover:bg-dark hover:text-white transition-all">
+          <svg class="w-5 h-5" viewBox="0 0 22 22" fill="none"><path d="M.46 0h9.62s.46 0 .46.46v9.62s0 .46-.46.46H.46S0 10.54 0 10.08V.46S0 0 .46 0z" fill="currentColor"/><path d="M.46 11.46h9.62s.46 0 .46.46v9.62s0 .46-.46.46H.46S0 22 0 21.54v-9.62s0-.46.46-.46z" fill="currentColor"/><path d="M11.92 11.46h9.62s.46 0 .46.46v9.62s0 .46-.46.46h-9.62s-.46 0-.46-.46v-9.62s0-.46.46-.46z" fill="currentColor"/><path d="M11.92 0h9.62s.46 0 .46.46v9.62s0 .46-.46.46h-9.62s-.46 0-.46-.46V.46s0-.46.46-.46z" fill="currentColor"/></svg>
+          Join Windows waitlist
         </a>
-        <p class="text-sm text-stone-400 mt-5">Requires macOS 14 Sonoma or later</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="py-10 px-6 border-t border-stone-200 bg-[#F2F0EB]">
-      <div class="max-w-6xl mx-auto text-center">
-        <p class="text-sm text-stone-500">Built for people who think faster than they type.</p>
+  <!-- Hero Video (full-width) -->
+  <section class="relative mt-16">
+    <video autoplay muted loop playsinline class="w-full">
+      <source src="/assets/hero-video.mp4" type="video/mp4" />
+    </video>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <button class="flex items-center gap-3 bg-white/30 backdrop-blur-sm text-white px-6 py-3 rounded-xl font-medium hover:bg-white/50 transition-all">
+        <svg class="w-5 h-5" viewBox="0 0 18 21" fill="none"><path d="M18 10.39L0 20.78V0l18 10.39z" fill="white"/></svg>
+        Watch video
+      </button>
+    </div>
+  </section>
+
+  <!-- Value Props -->
+  <section id="features" class="py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-heading text-4xl md:text-[52px] leading-[1.1] tracking-[-2px] max-w-3xl">
+        Do work productively with your voice,<br />
+        save hours of busywork,<br />
+        and be more productive than ever.
+      </h2>
+
+      <!-- Feature Cards -->
+      <div class="mt-16 space-y-6">
+        <!-- Card 1: Full width -->
+        <div class="relative rounded-3xl overflow-hidden bg-brown min-h-[400px]">
+          <div class="absolute inset-0">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+              <source src="/assets/feature-1.mp4" type="video/mp4" />
+            </video>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+          </div>
+          <div class="relative z-10 p-10 md:p-14 max-w-md">
+            <h3 class="font-heading text-3xl md:text-[40px] leading-tight tracking-[-1px] text-white">
+              Your instant ticket out of the weeds.
+            </h3>
+            <p class="text-white/80 mt-4 leading-relaxed">
+              Ramble at any application & let it do the work and let your mind wander.
+            </p>
+          </div>
+        </div>
+
+        <!-- Cards 2 & 3: Side by side -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="relative rounded-3xl overflow-hidden bg-brown min-h-[380px]">
+            <div class="absolute inset-0">
+              <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                <source src="/assets/feature-2.mp4" type="video/mp4" />
+              </video>
+              <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+            </div>
+            <div class="relative z-10 p-10 max-w-sm">
+              <h3 class="font-heading text-3xl md:text-[40px] leading-tight tracking-[-1px] text-white">
+                Put your keyboard on ooo.
+              </h3>
+              <p class="text-white/80 mt-4 leading-relaxed text-sm">
+                Dictate perfect emails, draft documents or code your way out in Claude while you literally put your feet up.
+              </p>
+            </div>
+          </div>
+
+          <div class="relative rounded-3xl overflow-hidden bg-brown min-h-[380px]">
+            <div class="absolute inset-0">
+              <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                <source src="/assets/feature-3.mp4" type="video/mp4" />
+              </video>
+              <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
+            </div>
+            <div class="relative z-10 p-10 max-w-sm">
+              <h3 class="font-heading text-3xl md:text-[40px] leading-tight tracking-[-1px] text-white">
+                Delegate your digital itinerary.
+              </h3>
+              <p class="text-white/80 mt-4 leading-relaxed text-sm">
+                Command your PC to navigate heavy-duty apps and execute complex tasks without lifting a finger.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
-  </main>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <h2 class="font-heading text-5xl md:text-6xl tracking-[-2px]">How it works</h2>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+        <!-- Step 1 -->
+        <div>
+          <div class="relative rounded-2xl overflow-hidden aspect-[3/4] border border-black/5">
+            <img src="/assets/step-1.png" alt="Download the app" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-black/30">
+              <a href={downloadUrl} class="flex items-center gap-2 bg-dark/90 text-white text-xs font-medium px-4 py-2.5 rounded-lg backdrop-blur-sm">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none"><path d="M12.15 6.9c-.95 0-2.41-1.08-3.96-1.04-2.04.03-3.91 1.18-4.96 3.01-2.12 3.68-.55 9.1 1.52 12.09 1.01 1.45 2.21 3.09 3.79 3.04 1.52-.07 2.09-.99 3.94-.99 1.83 0 2.35.99 3.96.95 1.64-.03 2.67-1.48 3.67-2.95 1.16-1.69 1.64-3.33 1.66-3.42-.04-.01-3.18-1.22-3.22-4.86-.04-3.04 2.47-4.49 2.59-4.56-1.43-2.09-3.62-2.32-4.39-2.38-2-.16-3.67 1.09-4.6 1.09zM15.53 3.83c.84-1.01 1.4-2.43 1.25-3.83-1.21.05-2.66.8-3.53 1.82-.78.9-1.46 2.34-1.28 3.71 1.34.1 2.72-.7 3.56-1.7" fill="white"/></svg>
+                Download for Mac
+              </a>
+              <a href="#" class="flex items-center gap-2 bg-dark/90 text-white text-xs font-medium px-4 py-2.5 rounded-lg backdrop-blur-sm">
+                <svg class="w-3.5 h-3.5" viewBox="0 0 22 22" fill="none"><path d="M.46 0h9.62s.46 0 .46.46v9.62s0 .46-.46.46H.46S0 10.54 0 10.08V.46S0 0 .46 0z" fill="white"/><path d="M.46 11.46h9.62s.46 0 .46.46v9.62s0 .46-.46.46H.46S0 22 0 21.54v-9.62s0-.46.46-.46z" fill="white"/><path d="M11.92 11.46h9.62s.46 0 .46.46v9.62s0 .46-.46.46h-9.62s-.46 0-.46-.46v-9.62s0-.46.46-.46z" fill="white"/><path d="M11.92 0h9.62s.46 0 .46.46v9.62s0 .46-.46.46h-9.62s-.46 0-.46-.46V.46s0-.46.46-.46z" fill="white"/></svg>
+                Join Windows waitlist
+              </a>
+            </div>
+          </div>
+          <p class="font-heading text-lg mt-4">Download the app</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div>
+          <div class="rounded-2xl overflow-hidden aspect-[3/4] border border-black/5">
+            <img src="/assets/step-2.png" alt="Press keyboard shortcut" class="w-full h-full object-cover" />
+          </div>
+          <p class="font-heading text-lg mt-4">Press keyboard shortcut on any tab to summon Ramble</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div>
+          <div class="rounded-2xl overflow-hidden aspect-[3/4] border border-black/5">
+            <img src="/assets/step-3.png" alt="Tell Ramble what you need" class="w-full h-full object-cover" />
+          </div>
+          <p class="font-heading text-lg mt-4">Tell Ramble what you need to accomplish</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div>
+          <div class="rounded-2xl overflow-hidden aspect-[3/4] border border-black/5">
+            <img src="/assets/step-4.png" alt="Sit back and relax" class="w-full h-full object-cover" />
+          </div>
+          <p class="font-heading text-lg mt-4">Sit back, enjoy your time while Ramble does the tasks for you.</p>
+        </div>
+      </div>
+
+      <div class="flex justify-center mt-12">
+        <a href={downloadUrl} class="flex items-center gap-3 bg-dark text-white px-7 py-4 rounded-2xl font-medium hover:-translate-y-0.5 transition-all shadow-lg">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M12.15 6.9c-.95 0-2.41-1.08-3.96-1.04-2.04.03-3.91 1.18-4.96 3.01-2.12 3.68-.55 9.1 1.52 12.09 1.01 1.45 2.21 3.09 3.79 3.04 1.52-.07 2.09-.99 3.94-.99 1.83 0 2.35.99 3.96.95 1.64-.03 2.67-1.48 3.67-2.95 1.16-1.69 1.64-3.33 1.66-3.42-.04-.01-3.18-1.22-3.22-4.86-.04-3.04 2.47-4.49 2.59-4.56-1.43-2.09-3.62-2.32-4.39-2.38-2-.16-3.67 1.09-4.6 1.09zM15.53 3.83c.84-1.01 1.4-2.43 1.25-3.83-1.21.05-2.66.8-3.53 1.82-.78.9-1.46 2.34-1.28 3.71 1.34.1 2.72-.7 3.56-1.7" fill="white"/></svg>
+          Download for Mac
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section id="privacy" class="py-24 px-6 bg-white">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="font-heading text-5xl md:text-6xl tracking-[-2px]">Private by design.</h2>
+        <p class="text-xl md:text-2xl text-muted mt-4">We sell software, not your data.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-8 rounded-2xl bg-cream-light/30 border border-black/5">
+          <h3 class="font-heading text-2xl md:text-[30px] tracking-[-1px]">No Training</h3>
+          <p class="text-muted mt-4 leading-relaxed">We have strict agreements with our AI partners. Your voice and data are never used to train their models.</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-cream-light/30 border border-black/5">
+          <h3 class="font-heading text-2xl md:text-[30px] tracking-[-1px]">Ephemeral Processing</h3>
+          <p class="text-muted mt-4 leading-relaxed">Your requests are processed instantly and then discarded. We don't build a profile on you or store your request history.</p>
+        </div>
+        <div class="p-8 rounded-2xl bg-cream-light/30 border border-black/5">
+          <h3 class="font-heading text-2xl md:text-[30px] tracking-[-1px]">Local First</h3>
+          <p class="text-muted mt-4 leading-relaxed">Wherever possible, Ramble uses on-device intelligence to understand context before reaching out to the cloud.</p>
+        </div>
+      </div>
+
+      <p class="text-center text-sm text-muted mt-8">
+        Read more on our <a href="#" class="underline hover:text-dark">privacy page</a>
+      </p>
+    </div>
+  </section>
+
+  <FAQ />
+
+  <!-- Mascot -->
+  <section class="py-16 px-6 bg-white">
+    <div class="max-w-md mx-auto">
+      <img src="/assets/mascot.svg" alt="Ramble mascot" class="w-full" />
+    </div>
+  </section>
+
+  <!-- CTA (contained, rounded) -->
+  <section class="px-6 pb-16 bg-white">
+    <div class="relative max-w-5xl mx-auto rounded-3xl overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="/assets/campfire.png" alt="" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-black/10"></div>
+      </div>
+      <div class="relative z-10 py-24 px-6 text-center text-white">
+        <h2 class="font-serif text-5xl md:text-6xl leading-tight">Ready to pack your bags?</h2>
+        <p class="text-lg md:text-xl mt-4 text-white/80">Reclaim your time and start enjoying your workday again.</p>
+        <a href={downloadUrl} class="inline-flex items-center gap-2 mt-10 bg-dark text-white text-lg font-medium px-8 py-4 rounded-2xl hover:-translate-y-0.5 transition-all shadow-lg">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M12.15 6.9c-.95 0-2.41-1.08-3.96-1.04-2.04.03-3.91 1.18-4.96 3.01-2.12 3.68-.55 9.1 1.52 12.09 1.01 1.45 2.21 3.09 3.79 3.04 1.52-.07 2.09-.99 3.94-.99 1.83 0 2.35.99 3.96.95 1.64-.03 2.67-1.48 3.67-2.95 1.16-1.69 1.64-3.33 1.66-3.42-.04-.01-3.18-1.22-3.22-4.86-.04-3.04 2.47-4.49 2.59-4.56-1.43-2.09-3.62-2.32-4.39-2.38-2-.16-3.67 1.09-4.6 1.09zM15.53 3.83c.84-1.01 1.4-2.43 1.25-3.83-1.21.05-2.66.8-3.53 1.82-.78.9-1.46 2.34-1.28 3.71 1.34.1 2.72-.7 3.56-1.7" fill="white"/></svg>
+          Download for Mac
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
 </Layout>
-
-<style>
-  /* Hero Section */
-  .hero-section {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #F2F0EB;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
-    overflow: hidden;
-  }
-
-  .hero-container {
-    text-align: center;
-    max-width: 600px;
-    padding: 2rem;
-    position: relative;
-    z-index: 10;
-  }
-
-  /* Dot Matrix Visual */
-  .visual-matrix {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    gap: 8px;
-    width: 200px;
-    height: 240px;
-    margin: 0 auto 3rem auto;
-    mask-image: radial-gradient(circle, black 40%, transparent 70%);
-    -webkit-mask-image: radial-gradient(circle, black 40%, transparent 70%);
-  }
-
-  .dot {
-    width: 6px;
-    height: 6px;
-    background-color: #0F0F0F;
-    border-radius: 50%;
-    animation: breathe 4s infinite ease-in-out;
-    opacity: 0.2;
-  }
-
-  .dot:nth-child(2n) { opacity: 0.8; animation-delay: 0.2s; }
-  .dot:nth-child(3n) { opacity: 0.5; animation-delay: 0.5s; }
-  .dot:nth-child(5n) { opacity: 1; animation-delay: 1s; transform: scale(1.2); }
-  .dot:nth-child(7n) { opacity: 0; }
-  .dot:nth-child(11n) { opacity: 0.9; animation-delay: 0.8s; }
-  .dot:nth-child(13n) { opacity: 0.3; animation-delay: 1.2s; }
-
-  @keyframes breathe {
-    0%, 100% { transform: scale(1); opacity: 0.4; }
-    50% { transform: scale(1.3); opacity: 0.9; }
-  }
-
-  /* Typography */
-  .hero-title {
-    font-size: 4.5rem;
-    font-weight: 500;
-    letter-spacing: -0.04em;
-    margin: 0;
-    line-height: 1;
-    color: #0F0F0F;
-  }
-
-  .hero-tagline {
-    font-size: 1.25rem;
-    color: #666;
-    margin: 1rem 0 3rem 0;
-    letter-spacing: -0.01em;
-  }
-
-  /* Download Button */
-  .download-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #0F0F0F;
-    color: #F2F0EB;
-    text-decoration: none;
-    padding: 18px 42px;
-    border-radius: 12px;
-    font-weight: 500;
-    font-size: 1.1rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-  }
-
-  .download-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-  }
-
-  .download-btn:active {
-    transform: translateY(0);
-  }
-
-  /* Meta Tags */
-  .meta {
-    margin-top: 1.5rem;
-    font-size: 0.8rem;
-    color: #666;
-  }
-
-  .meta-tag {
-    display: inline-block;
-    background: rgba(0,0,0,0.05);
-    padding: 4px 10px;
-    border-radius: 6px;
-    margin: 0 4px;
-  }
-
-  /* Responsive */
-  @media (max-width: 640px) {
-    .hero-title {
-      font-size: 3rem;
-    }
-
-    .visual-matrix {
-      width: 160px;
-      height: 192px;
-      gap: 6px;
-    }
-
-    .dot {
-      width: 5px;
-      height: 5px;
-    }
-  }
-</style>
-

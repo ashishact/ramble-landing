@@ -1,0 +1,41 @@
+---
+const downloadUrl = "https://ramble-cdn.brokenatom.io/macos/releases/Ramble-1.16.0.dmg";
+const faqs = [
+  "Does Ramble listen all the time?",
+  "Where does my voice data go?",
+  "Does it work inside any app?",
+  "Do I need my own API keys?",
+];
+---
+
+<section id="faq" class="py-24 px-6 bg-white">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid md:grid-cols-[1fr_1.5fr] gap-12 items-start">
+      <!-- Left -->
+      <div>
+        <h2 class="font-heading text-5xl md:text-6xl leading-[1.05] tracking-tight">
+          Frequently asked<br />questions
+        </h2>
+        <a href={downloadUrl} class="hidden md:inline-flex items-center gap-2 mt-8 bg-dark text-white text-sm font-medium px-6 py-3 rounded-xl hover:-translate-y-0.5 transition-all">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"><path d="M12.15 6.9c-.95 0-2.41-1.08-3.96-1.04-2.04.03-3.91 1.18-4.96 3.01-2.12 3.68-.55 9.1 1.52 12.09 1.01 1.45 2.21 3.09 3.79 3.04 1.52-.07 2.09-.99 3.94-.99 1.83 0 2.35.99 3.96.95 1.64-.03 2.67-1.48 3.67-2.95 1.16-1.69 1.64-3.33 1.66-3.42-.04-.01-3.18-1.22-3.22-4.86-.04-3.04 2.47-4.49 2.59-4.56-1.43-2.09-3.62-2.32-4.39-2.38-2-.16-3.67 1.09-4.6 1.09zM15.53 3.83c.84-1.01 1.4-2.43 1.25-3.83-1.21.05-2.66.8-3.53 1.82-.78.9-1.46 2.34-1.28 3.71 1.34.1 2.72-.7 3.56-1.7" fill="white"/></svg>
+          Download for Mac
+        </a>
+      </div>
+
+      <!-- Right - FAQ items -->
+      <div class="space-y-0">
+        {faqs.map((q) => (
+          <details class="group border-b border-black/10">
+            <summary class="flex items-center justify-between py-6 cursor-pointer list-none">
+              <span class="font-heading text-xl md:text-2xl pr-4">{q}</span>
+              <span class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full border border-black/10 text-lg transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <div class="pb-6 text-muted leading-relaxed">
+              We're working on detailed answers for our FAQ. Please reach out to our support team for more information.
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

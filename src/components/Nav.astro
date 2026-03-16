@@ -1,0 +1,72 @@
+---
+const downloadUrl = "https://ramble-cdn.brokenatom.io/macos/releases/Ramble-1.16.0.dmg";
+---
+
+<nav class="absolute top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-[1400px]">
+  <div class="flex items-center justify-between px-4 py-2 rounded-2xl border border-white/20 bg-gradient-to-b from-cream-light/80 to-cream/60 backdrop-blur-md shadow-[inset_0_2px_20px_rgba(255,255,255,0.2)]">
+    <!-- Logo -->
+    <a href="/" class="flex-shrink-0">
+      <img src="/assets/logo-small.svg" alt="Ramble" class="w-[75px] h-[75px]" />
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <div class="hidden md:flex items-center gap-6 text-sm">
+      <a href="/#features" class="hover:text-brown transition-colors">Features</a>
+      <a href="/pricing" class="hover:text-brown transition-colors">Pricing</a>
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-brown transition-colors">
+          Company
+          <svg class="w-3 h-2 mt-0.5" viewBox="0 0 10 7" fill="none"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="absolute top-full left-0 pt-2 hidden group-hover:block">
+          <div class="bg-white rounded-xl shadow-lg border border-black/5 py-2 px-1 min-w-[160px]">
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-cream/30 rounded-lg">About us</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-cream/30 rounded-lg">Privacy policy</a>
+            <a href="#" class="block px-4 py-2 text-sm hover:bg-cream/30 rounded-lg">Terms</a>
+          </div>
+        </div>
+      </div>
+      <a href="#privacy" class="hover:text-brown transition-colors">Privacy</a>
+      <a href="#faq" class="hover:text-brown transition-colors">FAQs</a>
+    </div>
+
+    <!-- Right Actions -->
+    <div class="flex items-center gap-3">
+      <a href="#" class="hidden md:flex items-center gap-2 text-sm hover:text-brown transition-colors">
+        <svg class="w-4 h-4" viewBox="0 0 18 21" fill="none"><path d="M18 10.39L0 20.78V0l18 10.39z" fill="currentColor"/></svg>
+        Watch video
+      </a>
+      <a href={downloadUrl} class="flex items-center gap-2 bg-dark text-white text-sm font-medium px-5 py-2.5 rounded-xl hover:-translate-y-0.5 transition-all">
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none"><path d="M12.15 6.9c-.95 0-2.41-1.08-3.96-1.04-2.04.03-3.91 1.18-4.96 3.01-2.12 3.68-.55 9.1 1.52 12.09 1.01 1.45 2.21 3.09 3.79 3.04 1.52-.07 2.09-.99 3.94-.99 1.83 0 2.35.99 3.96.95 1.64-.03 2.67-1.48 3.67-2.95 1.16-1.69 1.64-3.33 1.66-3.42-.04-.01-3.18-1.22-3.22-4.86-.04-3.04 2.47-4.49 2.59-4.56-1.43-2.09-3.62-2.32-4.39-2.38-2-.16-3.67 1.09-4.6 1.09zM15.53 3.83c.84-1.01 1.4-2.43 1.25-3.83-1.21.05-2.66.8-3.53 1.82-.78.9-1.46 2.34-1.28 3.71 1.34.1 2.72-.7 3.56-1.7" fill="white"/></svg>
+        Download
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="md:hidden p-2" aria-label="Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden mt-2 rounded-2xl border border-white/20 bg-cream-light/95 backdrop-blur-md p-6 shadow-lg">
+    <div class="flex flex-col gap-4 text-base">
+      <a href="/#features" class="hover:text-brown">Features</a>
+      <a href="/pricing" class="hover:text-brown">Pricing</a>
+      <a href="#" class="hover:text-brown">About us</a>
+      <a href="#privacy" class="hover:text-brown">Privacy</a>
+      <a href="#faq" class="hover:text-brown">FAQs</a>
+      <hr class="border-black/10" />
+      <a href={downloadUrl} class="flex items-center justify-center gap-2 bg-dark text-white font-medium px-5 py-3 rounded-xl">
+        Download for Mac
+      </a>
+      <a href="#" class="text-center text-sm text-muted">Join Windows waitlist</a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+</script>
