@@ -5,18 +5,20 @@ import FAQ from '../components/FAQ.astro';
 import Footer from '../components/Footer.astro';
 
 const downloadUrl = "https://ramble-cdn.brokenatom.io/macos/releases/Ramble-1.16.0.dmg";
+const windowsDownloadUrl = "https://ramble-cdn.brokenatom.io/windows/releases/RambleH_0.7.12_x64-setup.exe";
 ---
 
 <Layout>
   <Nav />
 
-  <!-- Hero -->
-  <section class="pt-32 pb-0 px-6 bg-white">
-    <div class="max-w-4xl mx-auto text-center">
-      <h1 class="font-heading text-5xl md:text-[70px] leading-[1.05] tracking-[-3px]">
+  <!-- Hero (full viewport) -->
+  <section class="min-h-screen flex flex-col bg-white">
+    <!-- Text content centered in top portion -->
+    <div class="flex-1 flex flex-col items-center justify-center px-6 pt-28">
+      <h1 class="font-heading text-5xl md:text-[70px] leading-[1.05] tracking-[-3px] text-center">
         Hands-free productivity.
       </h1>
-      <p class="text-lg md:text-xl text-muted mt-6 max-w-xl mx-auto leading-relaxed">
+      <p class="text-lg md:text-xl text-muted mt-6 max-w-xl mx-auto leading-relaxed text-center">
         Just speak your mind and let Ramble handle the busywork,
         saving you hours to actually enjoy your day.
       </p>
@@ -26,17 +28,17 @@ const downloadUrl = "https://ramble-cdn.brokenatom.io/macos/releases/Ramble-1.16
           <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none"><path d="M12.15 6.9c-.95 0-2.41-1.08-3.96-1.04-2.04.03-3.91 1.18-4.96 3.01-2.12 3.68-.55 9.1 1.52 12.09 1.01 1.45 2.21 3.09 3.79 3.04 1.52-.07 2.09-.99 3.94-.99 1.83 0 2.35.99 3.96.95 1.64-.03 2.67-1.48 3.67-2.95 1.16-1.69 1.64-3.33 1.66-3.42-.04-.01-3.18-1.22-3.22-4.86-.04-3.04 2.47-4.49 2.59-4.56-1.43-2.09-3.62-2.32-4.39-2.38-2-.16-3.67 1.09-4.6 1.09zM15.53 3.83c.84-1.01 1.4-2.43 1.25-3.83-1.21.05-2.66.8-3.53 1.82-.78.9-1.46 2.34-1.28 3.71 1.34.1 2.72-.7 3.56-1.7" fill="white"/></svg>
           Download for Mac
         </a>
-        <a href="#" class="flex items-center gap-3 border border-dark/20 text-dark px-7 py-4 rounded-2xl font-medium hover:bg-dark hover:text-white transition-all">
+        <a href={windowsDownloadUrl} class="flex items-center gap-3 border border-dark/20 text-dark px-7 py-4 rounded-2xl font-medium hover:bg-dark hover:text-white transition-all">
           <svg class="w-5 h-5" viewBox="0 0 22 22" fill="none"><path d="M.46 0h9.62s.46 0 .46.46v9.62s0 .46-.46.46H.46S0 10.54 0 10.08V.46S0 0 .46 0z" fill="currentColor"/><path d="M.46 11.46h9.62s.46 0 .46.46v9.62s0 .46-.46.46H.46S0 22 0 21.54v-9.62s0-.46.46-.46z" fill="currentColor"/><path d="M11.92 11.46h9.62s.46 0 .46.46v9.62s0 .46-.46.46h-9.62s-.46 0-.46-.46v-9.62s0-.46.46-.46z" fill="currentColor"/><path d="M11.92 0h9.62s.46 0 .46.46v9.62s0 .46-.46.46h-9.62s-.46 0-.46-.46V.46s0-.46.46-.46z" fill="currentColor"/></svg>
-          Join Windows waitlist
+          Download for Windows
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Hero Video (full-width) -->
-  <section class="relative mt-16">
-    <video autoplay muted loop playsinline class="w-full">
+  <!-- Hero Video (full-width, fills viewport) -->
+  <section class="relative h-screen">
+    <video autoplay muted loop playsinline class="w-full h-full object-cover">
       <source src="/assets/hero-video.mp4" type="video/mp4" />
     </video>
     <div class="absolute inset-0 flex items-center justify-center">
@@ -131,9 +133,9 @@ const downloadUrl = "https://ramble-cdn.brokenatom.io/macos/releases/Ramble-1.16
                 <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none"><path d="M12.15 6.9c-.95 0-2.41-1.08-3.96-1.04-2.04.03-3.91 1.18-4.96 3.01-2.12 3.68-.55 9.1 1.52 12.09 1.01 1.45 2.21 3.09 3.79 3.04 1.52-.07 2.09-.99 3.94-.99 1.83 0 2.35.99 3.96.95 1.64-.03 2.67-1.48 3.67-2.95 1.16-1.69 1.64-3.33 1.66-3.42-.04-.01-3.18-1.22-3.22-4.86-.04-3.04 2.47-4.49 2.59-4.56-1.43-2.09-3.62-2.32-4.39-2.38-2-.16-3.67 1.09-4.6 1.09zM15.53 3.83c.84-1.01 1.4-2.43 1.25-3.83-1.21.05-2.66.8-3.53 1.82-.78.9-1.46 2.34-1.28 3.71 1.34.1 2.72-.7 3.56-1.7" fill="white"/></svg>
                 Download for Mac
               </a>
-              <a href="#" class="flex items-center gap-2 bg-dark/90 text-white text-xs font-medium px-4 py-2.5 rounded-lg backdrop-blur-sm">
+              <a href={windowsDownloadUrl} class="flex items-center gap-2 bg-dark/90 text-white text-xs font-medium px-4 py-2.5 rounded-lg backdrop-blur-sm">
                 <svg class="w-3.5 h-3.5" viewBox="0 0 22 22" fill="none"><path d="M.46 0h9.62s.46 0 .46.46v9.62s0 .46-.46.46H.46S0 10.54 0 10.08V.46S0 0 .46 0z" fill="white"/><path d="M.46 11.46h9.62s.46 0 .46.46v9.62s0 .46-.46.46H.46S0 22 0 21.54v-9.62s0-.46.46-.46z" fill="white"/><path d="M11.92 11.46h9.62s.46 0 .46.46v9.62s0 .46-.46.46h-9.62s-.46 0-.46-.46v-9.62s0-.46.46-.46z" fill="white"/><path d="M11.92 0h9.62s.46 0 .46.46v9.62s0 .46-.46.46h-9.62s-.46 0-.46-.46V.46s0-.46.46-.46z" fill="white"/></svg>
-                Join Windows waitlist
+                Download for Windows
               </a>
             </div>
           </div>
